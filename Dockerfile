@@ -4,4 +4,4 @@ VOLUME /home/workchainer
 
 RUN apt-get update && \
     apt-get -y install sudo vim && \
-    pip install chainer numpy
+    pip install chainer numpy pandas
