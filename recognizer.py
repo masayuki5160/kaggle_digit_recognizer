@@ -41,9 +41,9 @@ val  = tuple_dataset.TupleDataset(imageData[threshold:],  labelData[threshold:])
 class CNN(chainer.Chain):
     def __init__(self, train=True):
         super(CNN, self).__init__(
-            conv1=L.Convolution2D(1, 32, 5),
-            conv2=L.Convolution2D(32, 64, 5),
-            l1=L.Linear(1024, 10),
+            conv1=L.Convolution2D(1, 20, 5),
+            conv2=L.Convolution2D(20, 50, 5),
+            l1=L.Linear(800, 10),
         )
         self.train = train
 
