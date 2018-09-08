@@ -5,8 +5,8 @@
 # Usage
 
 ```
-$ git clone 
-$ cd 
+$ git clone https://github.com/masayuki5160/kaggle_digit_recognizer.git
+$ cd kaggle_digit_recognizer
 
 # build docker image from Dockerfile
 $ docker build -t masaytan/chainer .
