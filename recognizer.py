@@ -44,8 +44,8 @@ class CNN(chainer.Chain):
             conv1=L.Convolution2D(1, 20, 3),
             conv2=L.Convolution2D(20, 50, 4),
             conv3=L.Convolution2D(50, 100, 2),
-            l1=L.Linear(400, 500),
-            l2=L.Linear(500, 10),
+            conv4=L.Convolution2D(100, 50, 2),
+            l1=L.Linear(50, 10),
         )
         self.train = train
 
@@ -53,8 +53,8 @@ class CNN(chainer.Chain):
         h = F.max_pooling_2d(F.relu(self.conv1(x)), 2)
         h = F.max_pooling_2d(F.relu(self.conv2(h)), 2)
         h = F.max_pooling_2d(F.relu(self.conv3(h)), 2)
-        h = F.dropout(F.relu(self.l1(h)))
-        return self.l2(h)
+        h = F.max_pooling_2d(F.relu(self.conv4(h)), 2)
+        return self.l1(h)
 
 
 # 学習の実行
